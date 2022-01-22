@@ -1,8 +1,8 @@
 node {
     def home
     def jenkins
-    def docker
-    def kuber
+    //def docker
+    //def kuber
 
     stage('Clone repository') {
       
