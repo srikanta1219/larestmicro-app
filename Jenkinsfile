@@ -12,10 +12,10 @@ node {
 
     stage('Build image') {
   
-       home = docker.build ("srikanta1219/ho",  "${env.WORKSPACE}/home/ ")
-       jenkins = docker.build ("srikanta1219/jen",  "${env.WORKSPACE}/jenkins/ ")
-       docker1 = docker.build ("srikanta1219/dock",  "${env.WORKSPACE}/docker/ ")
-       kuber = docker.build ("srikanta1219/kube",  "${env.WORKSPACE}/kuber/ ")
+       home = docker.build ("srikanta1219/home",  "${env.WORKSPACE}/home/ ")
+       jenkins = docker.build ("srikanta1219/jenkins",  "${env.WORKSPACE}/jenkins/ ")
+       docker1 = docker.build ("srikanta1219/docker",  "${env.WORKSPACE}/docker/ ")
+       kuber = docker.build ("srikanta1219/kubern8s",  "${env.WORKSPACE}/kuber/ ")
        
     }
 
