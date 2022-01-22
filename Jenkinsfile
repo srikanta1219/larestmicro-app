@@ -9,7 +9,7 @@ node {
 
     stage('Build image') {
   
-       home = docker.build("srikanta1219/ho", -f "/multi-image-build/home/ ")
+       home = docker.build("srikanta1219/ho",  "/multi-image-build/home/ ")
     }
 
     stage('Test image') {
