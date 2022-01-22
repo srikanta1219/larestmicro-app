@@ -9,7 +9,7 @@ node {
 
     stage('Build image') {
   
-       home = docker.build ("srikanta1219/ho",  -f "${env.WORKSPACE} /multi-image-build/home/Dockerfile .")
+       home = docker.build ("srikanta1219/ho",  "${env.WORKSPACE} /multi-image-build/home/Dockerfile .")
     }
 
     stage('Test image') {
