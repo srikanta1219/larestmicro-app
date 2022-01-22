@@ -14,7 +14,7 @@ node {
   
        home = docker.build ("srikanta1219/ho",  "${env.WORKSPACE}/home/ ")
        jenkins = docker.build ("srikanta1219/jen",  "${env.WORKSPACE}/jenkins/ ")
-       docker = docker.build ("srikanta1219/dock",  "${env.WORKSPACE}/docker/ ")
+      // docker = docker.build ("srikanta1219/dock",  "${env.WORKSPACE}/docker/ ")
       // kuber = docker.build ("srikanta1219/kube",  "${env.WORKSPACE}/kuber/ ")
        
     }
@@ -41,7 +41,7 @@ node {
         docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
             home.push("${env.BUILD_NUMBER}")
             jenkins.push("${env.BUILD_NUMBER}")
-            docker.push("${env.BUILD_NUMBER}")
+           // docker.push("${env.BUILD_NUMBER}")
            // kuber.push("${env.BUILD_NUMBER}")
         }
     }
