@@ -9,7 +9,7 @@ node {
 
     stage('Build image') {
   
-       home = docker.build("srikanta1219/ho", "/var/lib/jenkins/workspace/multi-image-build/home/Dockerfile .")
+       home = docker.build("srikanta1219/ho", "/var/lib/jenkins/workspace/multi-image-build/home/Dockerfile ")
     }
 
     stage('Test image') {
