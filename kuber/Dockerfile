@@ -1,3 +1,3 @@
-FROM nginx:latest
+FROM nginx
 COPY k8s.html /usr/share/nginx/html
 EXPOSE 80
