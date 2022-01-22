@@ -12,10 +12,10 @@ node {
 
     stage('Build image') {
   
-       home = docker.build("srikanta1219/ho","-f ${env.WORKSPACE}/home/Dockerfile ." )
-       jenkins = docker.build("srikanta1219/je","-f ${env.WORKSPACE}/jenkins/Dockerfile .")
-       docker = docker.build("srikanta1219/do","-f ${env.WORKSPACE}/docker/Dockerfile .")
-       kuber = docker.build("srikanta1219/ku","-f ${env.WORKSPACE}/kuber/Dockerfile .")
+        sh  'home = docker.build("srikanta1219/ho","-f ${env.WORKSPACE}/home/Dockerfile ." )'
+        sh  'jenkins = docker.build("srikanta1219/je","-f ${env.WORKSPACE}/jenkins/Dockerfile .")'
+        sh  'docker = docker.build("srikanta1219/do","-f ${env.WORKSPACE}/docker/Dockerfile .")'
+        sh  'kuber = docker.build("srikanta1219/ku","-f ${env.WORKSPACE}/kuber/Dockerfile .")'
     }
 
     stage('Test image') {
