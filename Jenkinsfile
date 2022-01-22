@@ -1,8 +1,8 @@
 node {
     def home
     def jenkins
-    //def docker
-    //def kuber
+    def docker1
+    def kuber
 
     stage('Clone repository') {
       
@@ -14,7 +14,7 @@ node {
   
        home = docker.build ("srikanta1219/ho",  "${env.WORKSPACE}/home/ ")
        jenkins = docker.build ("srikanta1219/jen",  "${env.WORKSPACE}/jenkins/ ")
-      // docker = docker.build ("srikanta1219/dock",  "${env.WORKSPACE}/docker/ ")
+       docker1 = docker.build ("srikanta1219/dock",  "${env.WORKSPACE}/docker/ ")
       // kuber = docker.build ("srikanta1219/kube",  "${env.WORKSPACE}/kuber/ ")
        
     }
@@ -28,7 +28,7 @@ node {
         jenkins.inside {
             sh 'echo "Tests passed"'
         }
-        docker.inside {
+        docker1.inside {
             sh 'echo "Tests passed"'
         }
         kuber.inside {
@@ -41,7 +41,7 @@ node {
         docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
             home.push("${env.BUILD_NUMBER}")
             jenkins.push("${env.BUILD_NUMBER}")
-           // docker.push("${env.BUILD_NUMBER}")
+            docker1.push("${env.BUILD_NUMBER}")
            // kuber.push("${env.BUILD_NUMBER}")
         }
     }
