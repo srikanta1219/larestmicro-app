@@ -45,6 +45,10 @@ node {
             kuber.push("${env.BUILD_NUMBER}")
         }
     }
-    
-    
-}
+	stage('Trigger Kubernetes') {
+                echo "triggering updatekubernetesjob"
+                build job: 'updatekubernetes', parameters: [string(name: 'DOCKERTAG', value: env.BUILD_NUMBER)]
+        } 
+		
+	}
+
